@@ -31,7 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,6 +49,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\RepositorioMarca.cs" />
+    <Compile Include="Repositories\RepositorioProduto.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProdutosMarcas.Dominio\ProdutosMarcas.Dominio.csproj">
+      <Project>{03db0763-07ab-4c34-a2f1-bcbc50aa52ec}</Project>
+      <Name>ProdutosMarcas.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProdutosMarcas.Persistencia.EF\ProdutosMarcas.Persistencia.EF.csproj">
+      <Project>{75a49b11-e9fe-488c-a785-64065b2208b3}</Project>
+      <Name>ProdutosMarcas.Persistencia.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProdutosMarcas.Repositorio.Comum\ProdutosMarcas.Repositorio.Comum.csproj">
+      <Project>{49e3002f-2aee-427e-b100-1356f3287d67}</Project>
+      <Name>ProdutosMarcas.Repositorio.Comum</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
