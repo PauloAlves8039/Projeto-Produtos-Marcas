@@ -8,11 +8,8 @@
 using ProdutosMarcas.Dominio.Entities;
 using ProdutosMarcas.Persistencia.EF.Context;
 using ProdutosMarcas.Repositorio.Comum.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProdutosMarcas.Repositorio.EF.Repositories
 {
