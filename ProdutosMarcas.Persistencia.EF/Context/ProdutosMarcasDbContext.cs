@@ -15,6 +15,12 @@ namespace ProdutosMarcas.Persistencia.EF.Context
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Marca> Marca { get; set; }
 
+        public ProdutosMarcasDbContext()
+        {
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Produto>()
