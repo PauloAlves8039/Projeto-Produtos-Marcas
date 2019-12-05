@@ -68,6 +68,7 @@ namespace ProdutosMarcas.Apresentacao
                 repositorioProduto.Atualizar(produtoASerAlterado);
                 MessageBox.Show("Produto alterado com sucesso!", "Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            Close();
         }
 
         private void btnLimparProduto_Click(object sender, EventArgs e)
