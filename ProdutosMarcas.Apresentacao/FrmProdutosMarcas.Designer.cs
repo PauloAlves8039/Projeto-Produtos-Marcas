@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProdutosMarcas));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -38,17 +39,18 @@
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.gpbMarcas = new System.Windows.Forms.GroupBox();
+            this.dgvMarcas = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAdicionarMarca = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAtualizarMarca = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnExcluirMarca = new System.Windows.Forms.ToolStripButton();
-            this.gpbMarcas = new System.Windows.Forms.GroupBox();
-            this.dgvMarcas = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.gpbProdutos = new System.Windows.Forms.GroupBox();
+            this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btnAdiconarProdutos = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -56,19 +58,19 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnExcluirProduto = new System.Windows.Forms.ToolStripButton();
             this.btnSair = new System.Windows.Forms.ToolStripButton();
-            this.gpbProdutos = new System.Windows.Forms.GroupBox();
-            this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.IdMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.gpbMarcas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
-            this.toolStrip2.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.gpbProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,6 +82,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(884, 77);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(417, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 50);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // statusStrip1
             // 
@@ -136,16 +148,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(417, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 50);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.gpbMarcas);
@@ -155,14 +157,33 @@
             this.panel2.Size = new System.Drawing.Size(860, 250);
             this.panel2.TabIndex = 1;
             // 
-            // panel3
+            // gpbMarcas
             // 
-            this.panel3.Controls.Add(this.gpbProdutos);
-            this.panel3.Controls.Add(this.toolStrip2);
-            this.panel3.Location = new System.Drawing.Point(12, 308);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(860, 250);
-            this.panel3.TabIndex = 2;
+            this.gpbMarcas.Controls.Add(this.dgvMarcas);
+            this.gpbMarcas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gpbMarcas.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbMarcas.Location = new System.Drawing.Point(0, 0);
+            this.gpbMarcas.Name = "gpbMarcas";
+            this.gpbMarcas.Size = new System.Drawing.Size(860, 211);
+            this.gpbMarcas.TabIndex = 1;
+            this.gpbMarcas.TabStop = false;
+            this.gpbMarcas.Text = "Marcas Cadastradas";
+            // 
+            // dgvMarcas
+            // 
+            this.dgvMarcas.AllowUserToAddRows = false;
+            this.dgvMarcas.AllowUserToDeleteRows = false;
+            this.dgvMarcas.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMarcas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdMarca,
+            this.NomeMarca});
+            this.dgvMarcas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMarcas.Location = new System.Drawing.Point(3, 18);
+            this.dgvMarcas.Name = "dgvMarcas";
+            this.dgvMarcas.ReadOnly = true;
+            this.dgvMarcas.Size = new System.Drawing.Size(854, 190);
+            this.dgvMarcas.TabIndex = 0;
             // 
             // toolStrip1
             // 
@@ -221,26 +242,35 @@
             this.btnExcluirMarca.Text = "Excluir Marca";
             this.btnExcluirMarca.Click += new System.EventHandler(this.btnExcluirMarca_Click);
             // 
-            // gpbMarcas
+            // panel3
             // 
-            this.gpbMarcas.Controls.Add(this.dgvMarcas);
-            this.gpbMarcas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gpbMarcas.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbMarcas.Location = new System.Drawing.Point(0, 0);
-            this.gpbMarcas.Name = "gpbMarcas";
-            this.gpbMarcas.Size = new System.Drawing.Size(860, 211);
-            this.gpbMarcas.TabIndex = 1;
-            this.gpbMarcas.TabStop = false;
-            this.gpbMarcas.Text = "Marcas Cadastradas";
+            this.panel3.Controls.Add(this.gpbProdutos);
+            this.panel3.Controls.Add(this.toolStrip2);
+            this.panel3.Location = new System.Drawing.Point(12, 308);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(860, 250);
+            this.panel3.TabIndex = 2;
             // 
-            // dgvMarcas
+            // gpbProdutos
             // 
-            this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarcas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMarcas.Location = new System.Drawing.Point(3, 18);
-            this.dgvMarcas.Name = "dgvMarcas";
-            this.dgvMarcas.Size = new System.Drawing.Size(854, 190);
-            this.dgvMarcas.TabIndex = 0;
+            this.gpbProdutos.Controls.Add(this.dgvProdutos);
+            this.gpbProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gpbProdutos.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbProdutos.Location = new System.Drawing.Point(0, 0);
+            this.gpbProdutos.Name = "gpbProdutos";
+            this.gpbProdutos.Size = new System.Drawing.Size(860, 211);
+            this.gpbProdutos.TabIndex = 1;
+            this.gpbProdutos.TabStop = false;
+            this.gpbProdutos.Text = "Produtos Cadastrados";
+            // 
+            // dgvProdutos
+            // 
+            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProdutos.Location = new System.Drawing.Point(3, 18);
+            this.dgvProdutos.Name = "dgvProdutos";
+            this.dgvProdutos.Size = new System.Drawing.Size(854, 190);
+            this.dgvProdutos.TabIndex = 0;
             // 
             // toolStrip2
             // 
@@ -311,26 +341,21 @@
             this.btnSair.Text = "Sair";
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // gpbProdutos
+            // IdMarca
             // 
-            this.gpbProdutos.Controls.Add(this.dgvProdutos);
-            this.gpbProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gpbProdutos.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbProdutos.Location = new System.Drawing.Point(0, 0);
-            this.gpbProdutos.Name = "gpbProdutos";
-            this.gpbProdutos.Size = new System.Drawing.Size(860, 211);
-            this.gpbProdutos.TabIndex = 1;
-            this.gpbProdutos.TabStop = false;
-            this.gpbProdutos.Text = "Produtos Cadastrados";
+            this.IdMarca.DataPropertyName = "Id";
+            this.IdMarca.HeaderText = "Id";
+            this.IdMarca.Name = "IdMarca";
+            this.IdMarca.ReadOnly = true;
+            this.IdMarca.Visible = false;
             // 
-            // dgvProdutos
+            // NomeMarca
             // 
-            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProdutos.Location = new System.Drawing.Point(3, 18);
-            this.dgvProdutos.Name = "dgvProdutos";
-            this.dgvProdutos.Size = new System.Drawing.Size(854, 190);
-            this.dgvProdutos.TabIndex = 0;
+            this.NomeMarca.DataPropertyName = "Nome";
+            this.NomeMarca.HeaderText = "Nome da marca";
+            this.NomeMarca.Name = "NomeMarca";
+            this.NomeMarca.ReadOnly = true;
+            this.NomeMarca.Width = 300;
             // 
             // FrmProdutosMarcas
             // 
@@ -351,21 +376,21 @@
             this.Load += new System.EventHandler(this.FrmProdutosMarcas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.gpbMarcas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.gpbProdutos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).EndInit();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -400,5 +425,7 @@
         private System.Windows.Forms.ToolStripButton btnSair;
         private System.Windows.Forms.GroupBox gpbProdutos;
         private System.Windows.Forms.DataGridView dgvProdutos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdMarca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeMarca;
     }
 }

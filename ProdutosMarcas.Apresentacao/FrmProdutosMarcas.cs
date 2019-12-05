@@ -1,4 +1,8 @@
-﻿using System;
+﻿using ProdutosMarcas.Apresentacao.ViewModels;
+using ProdutosMarcas.Dominio.Entities;
+using ProdutosMarcas.Repositorio.Comum.Interfaces;
+using ProdutosMarcas.Repositorio.EF.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +23,7 @@ namespace ProdutosMarcas.Apresentacao
 
         private void FrmProdutosMarcas_Load(object sender, EventArgs e)
         {
-
+            PreencherDataGridViewMarcas();
         }
 
         private void FrmProdutosMarcas_FormClosed(object sender, FormClosedEventArgs e)
@@ -31,6 +35,24 @@ namespace ProdutosMarcas.Apresentacao
         {
             toolStripStatusLabel3.Text = DateTime.Now.ToShortDateString();
             toolStripStatusLabel5.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void PreencherDataGridViewMarcas()
+        {
+            IRepositorioGenerico<Marca> repositorioMarcas = new RepositorioMarca();
+            List<Marca> marcas = repositorioMarcas.SelecionarTodos();
+            List<MarcaViewModel> marcaViewModels = new List<MarcaViewModel>();
+            foreach (Marca marca in marcas)
+            {
+                MarcaViewModel viewModel = new MarcaViewModel
+                {
+                    Id = marca.Id,
+                    Nome = marca.Nome
+                };
+                marcaViewModels.Add(viewModel);
+            }
+            dgvMarcas.DataSource = marcaViewModels;
+            dgvMarcas.Refresh();
         }
 
         private void btnAdicionarMarca_Click(object sender, EventArgs e)
