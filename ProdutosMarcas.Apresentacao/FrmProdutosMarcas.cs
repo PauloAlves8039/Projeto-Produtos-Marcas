@@ -84,7 +84,9 @@ namespace ProdutosMarcas.Apresentacao
 
         private void btnAdicionarMarca_Click(object sender, EventArgs e)
         {
-
+            FrmMarca frmMarca = new FrmMarca();
+            frmMarca.ShowDialog();
+            PreencherDataGridViewMarcasAsync();
         }
 
         private void btnAtualizarMarca_Click(object sender, EventArgs e)

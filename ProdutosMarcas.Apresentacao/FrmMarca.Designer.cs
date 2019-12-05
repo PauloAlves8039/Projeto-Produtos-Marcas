@@ -36,8 +36,8 @@
             this.btnLimparMarca = new System.Windows.Forms.ToolStripButton();
             this.btnFecharMarca = new System.Windows.Forms.ToolStripButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtNomeMarca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -106,13 +106,22 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtMarca);
+            this.panel2.Controls.Add(this.txtNomeMarca);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(402, 97);
             this.panel2.TabIndex = 1;
+            // 
+            // txtNomeMarca
+            // 
+            this.txtNomeMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeMarca.Location = new System.Drawing.Point(127, 34);
+            this.txtNomeMarca.MaxLength = 50;
+            this.txtNomeMarca.Name = "txtNomeMarca";
+            this.txtNomeMarca.Size = new System.Drawing.Size(250, 23);
+            this.txtNomeMarca.TabIndex = 1;
             // 
             // label1
             // 
@@ -123,15 +132,6 @@
             this.label1.Size = new System.Drawing.Size(97, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome da Marca:";
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarca.Location = new System.Drawing.Point(127, 34);
-            this.txtMarca.MaxLength = 50;
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(250, 23);
-            this.txtMarca.TabIndex = 1;
             // 
             // FrmMarca
             // 
@@ -167,7 +167,7 @@
         private System.Windows.Forms.ToolStripButton btnLimparMarca;
         private System.Windows.Forms.ToolStripButton btnFecharMarca;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.TextBox txtNomeMarca;
         private System.Windows.Forms.Label label1;
     }
 }
