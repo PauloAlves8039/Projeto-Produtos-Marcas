@@ -60,6 +60,10 @@
             this.btnSair = new System.Windows.Forms.ToolStripButton();
             this.IdMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdMarcaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MarcaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -265,10 +269,19 @@
             // 
             // dgvProdutos
             // 
+            this.dgvProdutos.AllowUserToAddRows = false;
+            this.dgvProdutos.AllowUserToDeleteRows = false;
+            this.dgvProdutos.BackgroundColor = System.Drawing.Color.White;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProduto,
+            this.IdMarcaProduto,
+            this.NomeProduto,
+            this.MarcaProduto});
             this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProdutos.Location = new System.Drawing.Point(3, 18);
             this.dgvProdutos.Name = "dgvProdutos";
+            this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.Size = new System.Drawing.Size(854, 190);
             this.dgvProdutos.TabIndex = 0;
             // 
@@ -357,6 +370,38 @@
             this.NomeMarca.ReadOnly = true;
             this.NomeMarca.Width = 300;
             // 
+            // IdProduto
+            // 
+            this.IdProduto.DataPropertyName = "Id";
+            this.IdProduto.HeaderText = "Id";
+            this.IdProduto.Name = "IdProduto";
+            this.IdProduto.ReadOnly = true;
+            this.IdProduto.Visible = false;
+            // 
+            // IdMarcaProduto
+            // 
+            this.IdMarcaProduto.DataPropertyName = "MarcaId";
+            this.IdMarcaProduto.HeaderText = "Id Marca Produto";
+            this.IdMarcaProduto.Name = "IdMarcaProduto";
+            this.IdMarcaProduto.ReadOnly = true;
+            this.IdMarcaProduto.Visible = false;
+            // 
+            // NomeProduto
+            // 
+            this.NomeProduto.DataPropertyName = "Nome";
+            this.NomeProduto.HeaderText = "Nome do produto";
+            this.NomeProduto.Name = "NomeProduto";
+            this.NomeProduto.ReadOnly = true;
+            this.NomeProduto.Width = 300;
+            // 
+            // MarcaProduto
+            // 
+            this.MarcaProduto.DataPropertyName = "Marca";
+            this.MarcaProduto.HeaderText = "Marca do produto";
+            this.MarcaProduto.Name = "MarcaProduto";
+            this.MarcaProduto.ReadOnly = true;
+            this.MarcaProduto.Width = 300;
+            // 
             // FrmProdutosMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -427,5 +472,9 @@
         private System.Windows.Forms.DataGridView dgvProdutos;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdMarca;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeMarca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdMarcaProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MarcaProduto;
     }
 }

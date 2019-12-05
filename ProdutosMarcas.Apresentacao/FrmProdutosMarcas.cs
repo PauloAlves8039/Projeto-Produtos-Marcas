@@ -24,6 +24,7 @@ namespace ProdutosMarcas.Apresentacao
         private void FrmProdutosMarcas_Load(object sender, EventArgs e)
         {
             PreencherDataGridViewMarcasAsync();
+            PreencherDataGridViewProdutosAsync();
         }
 
         private void FrmProdutosMarcas_FormClosed(object sender, FormClosedEventArgs e)
@@ -56,6 +57,29 @@ namespace ProdutosMarcas.Apresentacao
                 dgvMarcas.DataSource = marcaViewModels;
                 dgvMarcas.Refresh();
             });            
+        }
+
+        private async void PreencherDataGridViewProdutosAsync()
+        {
+            IRepositorioGenerico<Produto> repositorioProdutos = new RepositorioProduto();
+            List<Produto> produtos = await repositorioProdutos.SelecionarTodos();
+            List<ProdutoViewModel> produtoViewModel = new List<ProdutoViewModel>();
+            foreach (Produto produto in produtos)
+            {
+                ProdutoViewModel viewModel = new ProdutoViewModel
+                {
+                    Id = produto.Id,
+                    Marca = produto.Marca.Nome,
+                    MarcaId = produto.MarcarId,
+                    Nome = produto.Nome
+                };
+                produtoViewModel.Add(viewModel);
+            }
+            dgvProdutos.Invoke((MethodInvoker)delegate
+            {
+                dgvProdutos.DataSource = produtoViewModel;
+                dgvProdutos.Refresh();
+            });
         }
 
         private void btnAdicionarMarca_Click(object sender, EventArgs e)
