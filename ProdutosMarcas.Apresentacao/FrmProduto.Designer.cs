@@ -36,10 +36,10 @@
             this.btnLimparProduto = new System.Windows.Forms.ToolStripButton();
             this.btnFecharProduto = new System.Windows.Forms.ToolStripButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.cmbMarcas = new System.Windows.Forms.ComboBox();
+            this.txtNomeProduto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtProduto = new System.Windows.Forms.TextBox();
-            this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -109,8 +109,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.cmbMarca);
-            this.panel2.Controls.Add(this.txtProduto);
+            this.panel2.Controls.Add(this.cmbMarcas);
+            this.panel2.Controls.Add(this.txtNomeProduto);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -119,15 +119,23 @@
             this.panel2.Size = new System.Drawing.Size(415, 111);
             this.panel2.TabIndex = 1;
             // 
-            // label1
+            // cmbMarcas
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nome do Produto:";
+            this.cmbMarcas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMarcas.FormattingEnabled = true;
+            this.cmbMarcas.Location = new System.Drawing.Point(133, 62);
+            this.cmbMarcas.Name = "cmbMarcas";
+            this.cmbMarcas.Size = new System.Drawing.Size(250, 23);
+            this.cmbMarcas.TabIndex = 3;
+            // 
+            // txtNomeProduto
+            // 
+            this.txtNomeProduto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeProduto.Location = new System.Drawing.Point(133, 23);
+            this.txtNomeProduto.MaxLength = 50;
+            this.txtNomeProduto.Name = "txtNomeProduto";
+            this.txtNomeProduto.Size = new System.Drawing.Size(250, 23);
+            this.txtNomeProduto.TabIndex = 2;
             // 
             // label2
             // 
@@ -139,23 +147,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Marca do Produto:";
             // 
-            // txtProduto
+            // label1
             // 
-            this.txtProduto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProduto.Location = new System.Drawing.Point(133, 23);
-            this.txtProduto.MaxLength = 50;
-            this.txtProduto.Name = "txtProduto";
-            this.txtProduto.Size = new System.Drawing.Size(250, 23);
-            this.txtProduto.TabIndex = 2;
-            // 
-            // cmbMarca
-            // 
-            this.cmbMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(133, 62);
-            this.cmbMarca.Name = "cmbMarca";
-            this.cmbMarca.Size = new System.Drawing.Size(250, 23);
-            this.cmbMarca.TabIndex = 3;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nome do Produto:";
             // 
             // FrmProduto
             // 
@@ -192,7 +192,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtProduto;
-        private System.Windows.Forms.ComboBox cmbMarca;
+        private System.Windows.Forms.TextBox txtNomeProduto;
+        private System.Windows.Forms.ComboBox cmbMarcas;
     }
 }
