@@ -101,7 +101,9 @@ namespace ProdutosMarcas.Apresentacao
 
         private void btnAdiconarProdutos_Click(object sender, EventArgs e)
         {
-
+            FrmProduto frmProduto = new FrmProduto();
+            frmProduto.ShowDialog();
+            PreencherDataGridViewProdutosAsync();
         }
 
         private void btnAtualizarProduto_Click(object sender, EventArgs e)
