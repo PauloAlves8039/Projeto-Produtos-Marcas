@@ -121,6 +121,7 @@
             // 
             // cmbMarcas
             // 
+            this.cmbMarcas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarcas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMarcas.FormattingEnabled = true;
             this.cmbMarcas.Location = new System.Drawing.Point(133, 62);
@@ -161,6 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(415, 151);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
