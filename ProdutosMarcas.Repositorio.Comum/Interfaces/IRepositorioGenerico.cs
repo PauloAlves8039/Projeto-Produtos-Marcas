@@ -6,12 +6,13 @@
 */
 
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ProdutosMarcas.Repositorio.Comum.Interfaces
 {
     public interface IRepositorioGenerico<TDominio>
     {
-        List<TDominio> SelecionarTodos();
+        Task<List<TDominio>> SelecionarTodos();
         TDominio SelecionarPorId(int id);
         void Inserir(TDominio entidade);
         void Atualizar(TDominio entidade);

@@ -23,7 +23,7 @@ namespace ProdutosMarcas.Apresentacao
 
         private void FrmProdutosMarcas_Load(object sender, EventArgs e)
         {
-            PreencherDataGridViewMarcas();
+            PreencherDataGridViewMarcasAsync();
         }
 
         private void FrmProdutosMarcas_FormClosed(object sender, FormClosedEventArgs e)
@@ -37,10 +37,10 @@ namespace ProdutosMarcas.Apresentacao
             toolStripStatusLabel5.Text = DateTime.Now.ToLongTimeString();
         }
 
-        private void PreencherDataGridViewMarcas()
+        private async void PreencherDataGridViewMarcasAsync()
         {
             IRepositorioGenerico<Marca> repositorioMarcas = new RepositorioMarca();
-            List<Marca> marcas = repositorioMarcas.SelecionarTodos();
+            List<Marca> marcas = await repositorioMarcas.SelecionarTodos();
             List<MarcaViewModel> marcaViewModels = new List<MarcaViewModel>();
             foreach (Marca marca in marcas)
             {
@@ -51,8 +51,11 @@ namespace ProdutosMarcas.Apresentacao
                 };
                 marcaViewModels.Add(viewModel);
             }
-            dgvMarcas.DataSource = marcaViewModels;
-            dgvMarcas.Refresh();
+            dgvMarcas.Invoke((MethodInvoker) delegate 
+            {
+                dgvMarcas.DataSource = marcaViewModels;
+                dgvMarcas.Refresh();
+            });            
         }
 
         private void btnAdicionarMarca_Click(object sender, EventArgs e)

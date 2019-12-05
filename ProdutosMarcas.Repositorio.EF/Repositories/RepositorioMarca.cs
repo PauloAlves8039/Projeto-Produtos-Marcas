@@ -10,6 +10,7 @@ using ProdutosMarcas.Persistencia.EF.Context;
 using ProdutosMarcas.Repositorio.Comum.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ProdutosMarcas.Repositorio.EF.Repositories
 {
@@ -52,12 +53,15 @@ namespace ProdutosMarcas.Repositorio.EF.Repositories
             }
         }
 
-        public List<Marca> SelecionarTodos()
+        public Task<List<Marca>> SelecionarTodos()
         {
-            using (ProdutosMarcasDbContext contexto = new ProdutosMarcasDbContext())
+            return Task.Run(() =>
             {
-                return contexto.Marca.ToList();
-            }
+                using (ProdutosMarcasDbContext contexto = new ProdutosMarcasDbContext())
+                {
+                    return contexto.Marca.ToList();
+                }
+            });
         }
     }
 }
