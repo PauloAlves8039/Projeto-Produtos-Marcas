@@ -91,7 +91,20 @@ namespace ProdutosMarcas.Apresentacao
 
         private void btnAtualizarMarca_Click(object sender, EventArgs e)
         {
-
+            if (dgvMarcas.SelectedRows.Count > 0)
+            {
+                int idMarcaSelecionada = Convert.ToInt32(dgvMarcas.SelectedRows[0].Cells[0].Value);
+                IRepositorioGenerico<Marca> repositorioMarcas = new RepositorioMarca();
+                Marca marcaASerAlterada = repositorioMarcas.SelecionarPorId(idMarcaSelecionada);
+                FrmMarca frmMarca = new FrmMarca(marcaASerAlterada);
+                frmMarca.ShowDialog();
+                PreencherDataGridViewMarcasAsync();
+                PreencherDataGridViewProdutosAsync();
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma marca antes!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnExcluirMarca_Click(object sender, EventArgs e)
@@ -108,7 +121,19 @@ namespace ProdutosMarcas.Apresentacao
 
         private void btnAtualizarProduto_Click(object sender, EventArgs e)
         {
-
+            if (dgvProdutos.SelectedRows.Count > 0)
+            {
+                int idProdutoSelecionada = Convert.ToInt32(dgvProdutos.SelectedRows[0].Cells[0].Value);
+                IRepositorioGenerico<Produto> repositorioProdutos = new RepositorioProduto();
+                Produto produtoASerAlterado = repositorioProdutos.SelecionarPorId(idProdutoSelecionada);
+                FrmProduto frmProduto = new FrmProduto(produtoASerAlterado);
+                frmProduto.ShowDialog();
+                PreencherDataGridViewProdutosAsync();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um produto antes!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnExcluirProduto_Click(object sender, EventArgs e)

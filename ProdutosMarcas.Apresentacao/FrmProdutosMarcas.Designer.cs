@@ -42,6 +42,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.gpbMarcas = new System.Windows.Forms.GroupBox();
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
+            this.IdMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAdicionarMarca = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -51,6 +53,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.gpbProdutos = new System.Windows.Forms.GroupBox();
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdMarcaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MarcaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btnAdiconarProdutos = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -58,12 +64,6 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnExcluirProduto = new System.Windows.Forms.ToolStripButton();
             this.btnSair = new System.Windows.Forms.ToolStripButton();
-            this.IdMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdMarcaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MarcaProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -184,10 +184,28 @@
             this.NomeMarca});
             this.dgvMarcas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMarcas.Location = new System.Drawing.Point(3, 18);
+            this.dgvMarcas.MultiSelect = false;
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.ReadOnly = true;
+            this.dgvMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMarcas.Size = new System.Drawing.Size(854, 190);
             this.dgvMarcas.TabIndex = 0;
+            // 
+            // IdMarca
+            // 
+            this.IdMarca.DataPropertyName = "Id";
+            this.IdMarca.HeaderText = "Id";
+            this.IdMarca.Name = "IdMarca";
+            this.IdMarca.ReadOnly = true;
+            this.IdMarca.Visible = false;
+            // 
+            // NomeMarca
+            // 
+            this.NomeMarca.DataPropertyName = "Nome";
+            this.NomeMarca.HeaderText = "Nome da marca";
+            this.NomeMarca.Name = "NomeMarca";
+            this.NomeMarca.ReadOnly = true;
+            this.NomeMarca.Width = 300;
             // 
             // toolStrip1
             // 
@@ -280,10 +298,44 @@
             this.MarcaProduto});
             this.dgvProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProdutos.Location = new System.Drawing.Point(3, 18);
+            this.dgvProdutos.MultiSelect = false;
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.ReadOnly = true;
+            this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProdutos.Size = new System.Drawing.Size(854, 190);
             this.dgvProdutos.TabIndex = 0;
+            // 
+            // IdProduto
+            // 
+            this.IdProduto.DataPropertyName = "Id";
+            this.IdProduto.HeaderText = "Id";
+            this.IdProduto.Name = "IdProduto";
+            this.IdProduto.ReadOnly = true;
+            this.IdProduto.Visible = false;
+            // 
+            // IdMarcaProduto
+            // 
+            this.IdMarcaProduto.DataPropertyName = "MarcaId";
+            this.IdMarcaProduto.HeaderText = "Id Marca Produto";
+            this.IdMarcaProduto.Name = "IdMarcaProduto";
+            this.IdMarcaProduto.ReadOnly = true;
+            this.IdMarcaProduto.Visible = false;
+            // 
+            // NomeProduto
+            // 
+            this.NomeProduto.DataPropertyName = "Nome";
+            this.NomeProduto.HeaderText = "Nome do produto";
+            this.NomeProduto.Name = "NomeProduto";
+            this.NomeProduto.ReadOnly = true;
+            this.NomeProduto.Width = 300;
+            // 
+            // MarcaProduto
+            // 
+            this.MarcaProduto.DataPropertyName = "Marca";
+            this.MarcaProduto.HeaderText = "Marca do produto";
+            this.MarcaProduto.Name = "MarcaProduto";
+            this.MarcaProduto.ReadOnly = true;
+            this.MarcaProduto.Width = 300;
             // 
             // toolStrip2
             // 
@@ -353,54 +405,6 @@
             this.btnSair.Size = new System.Drawing.Size(36, 36);
             this.btnSair.Text = "Sair";
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // IdMarca
-            // 
-            this.IdMarca.DataPropertyName = "Id";
-            this.IdMarca.HeaderText = "Id";
-            this.IdMarca.Name = "IdMarca";
-            this.IdMarca.ReadOnly = true;
-            this.IdMarca.Visible = false;
-            // 
-            // NomeMarca
-            // 
-            this.NomeMarca.DataPropertyName = "Nome";
-            this.NomeMarca.HeaderText = "Nome da marca";
-            this.NomeMarca.Name = "NomeMarca";
-            this.NomeMarca.ReadOnly = true;
-            this.NomeMarca.Width = 300;
-            // 
-            // IdProduto
-            // 
-            this.IdProduto.DataPropertyName = "Id";
-            this.IdProduto.HeaderText = "Id";
-            this.IdProduto.Name = "IdProduto";
-            this.IdProduto.ReadOnly = true;
-            this.IdProduto.Visible = false;
-            // 
-            // IdMarcaProduto
-            // 
-            this.IdMarcaProduto.DataPropertyName = "MarcaId";
-            this.IdMarcaProduto.HeaderText = "Id Marca Produto";
-            this.IdMarcaProduto.Name = "IdMarcaProduto";
-            this.IdMarcaProduto.ReadOnly = true;
-            this.IdMarcaProduto.Visible = false;
-            // 
-            // NomeProduto
-            // 
-            this.NomeProduto.DataPropertyName = "Nome";
-            this.NomeProduto.HeaderText = "Nome do produto";
-            this.NomeProduto.Name = "NomeProduto";
-            this.NomeProduto.ReadOnly = true;
-            this.NomeProduto.Width = 300;
-            // 
-            // MarcaProduto
-            // 
-            this.MarcaProduto.DataPropertyName = "Marca";
-            this.MarcaProduto.HeaderText = "Marca do produto";
-            this.MarcaProduto.Name = "MarcaProduto";
-            this.MarcaProduto.ReadOnly = true;
-            this.MarcaProduto.Width = 300;
             // 
             // FrmProdutosMarcas
             // 
