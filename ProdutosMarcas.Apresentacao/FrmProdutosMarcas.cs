@@ -109,7 +109,19 @@ namespace ProdutosMarcas.Apresentacao
 
         private void btnExcluirMarca_Click(object sender, EventArgs e)
         {
+            if (dgvMarcas.SelectedRows.Count > 0)
+            {
+                int idMarcaSelecionada = Convert.ToInt32(dgvMarcas.SelectedRows[0].Cells[0].Value);
+                IRepositorioGenerico<Marca> repositorioMarcas = new RepositorioMarca();
+                Marca marcaASerexcluida = repositorioMarcas.SelecionarPorId(idMarcaSelecionada);
+                repositorioMarcas.Excluir(marcaASerexcluida);
+                PreencherDataGridViewMarcasAsync();
 
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma marca antes!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnAdiconarProdutos_Click(object sender, EventArgs e)
@@ -138,7 +150,19 @@ namespace ProdutosMarcas.Apresentacao
 
         private void btnExcluirProduto_Click(object sender, EventArgs e)
         {
+            if (dgvProdutos.SelectedRows.Count > 0)
+            {
+                int idProdutoSelecionado = Convert.ToInt32(dgvProdutos.SelectedRows[0].Cells[0].Value);
+                IRepositorioGenerico<Produto> repositorioProdutos = new RepositorioProduto();
+                Produto produtoASerexcluido = repositorioProdutos.SelecionarPorId(idProdutoSelecionado);
+                repositorioProdutos.Excluir(produtoASerexcluido);
+                PreencherDataGridViewProdutosAsync();
 
+            }
+            else
+            {
+                MessageBox.Show("Selecione um produto antes!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnSair_Click(object sender, EventArgs e)
