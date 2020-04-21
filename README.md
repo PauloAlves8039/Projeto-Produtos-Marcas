@@ -1,7 +1,11 @@
-# Projeto-Produtos-Marcas
-Repositório de uma aplicação desenvolvida para uso no sistema operacional Windows, com o objetivo de utilizar um CRUD para catalogar listas de produtos e marcas, projeto teve sua estrutura criada com base no curso [C# (C Sharp) Avançado (https://www.treinaweb.com.br/curso/csharp-avancado), pertencente a formação [Desenvolvedor C# Sênior](https://www.treinaweb.com.br/formacao/desenvolvedor-c-senior).
+<h1 align="center">:book: Projeto Produtos Marcas</h1>
 
-# Especificações
+## :computer: Projeto
+Repositório de uma aplicação desenvolvida para desktop Windows, com o objetivo de utilizar um CRUD para catalogar listas de produtos e marcas.  
+
+Projeto teve sua estrutura criada com base no curso [C# (C Sharp) Avançado (https://www.treinaweb.com.br/curso/csharp-avancado), pertencente a formação [Desenvolvedor C# Sênior](https://www.treinaweb.com.br/formacao/desenvolvedor-c-senior).
+
+## :wrench: Recursos Utilizados
 - IDE Visual Studio Enterprise 2017 v15.9.17
 - Linguagem C#
 - Windows Forms Application
@@ -11,14 +15,18 @@ Repositório de uma aplicação desenvolvida para uso no sistema operacional Win
 - Repository Pattern
 - Programação Assíncrona
 
-# Screenshots
-<html lang="pt-br">
-<head>
-</head>
-<body>
-	<img src="https://github.com/PauloAlves8039/Projeto-Produtos-Marcas/blob/master/ProdutosMarcas.Apresentacao/Resources/screenshot.png">
-  <img src="https://github.com/PauloAlves8039/Projeto-Produtos-Marcas/blob/master/ProdutosMarcas.Apresentacao/Resources/screenshot1.png">
-  <img src="https://github.com/PauloAlves8039/Projeto-Produtos-Marcas/blob/master/ProdutosMarcas.Apresentacao/Resources/screenshot2.png">
-  <img src="https://github.com/PauloAlves8039/Projeto-Produtos-Marcas/blob/master/ProdutosMarcas.Apresentacao/Resources/screenshot3.png">
-</body>
-</html>
+## :floppy_disk: Clonar repositório
+Baixar repositório ```git clone https://github.com/PauloAlves8039/Projeto-Produtos-Marcas.git```
+
+## :camera: Screenshots
+### Tela de carregamento
+![img1](https://github.com/PauloAlves8039/Projeto-Produtos-Marcas/blob/master/ProdutosMarcas.Apresentacao/Resources/screenshot.png)
+### Formulário principal
+![img2](https://github.com/PauloAlves8039/Projeto-Produtos-Marcas/blob/master/ProdutosMarcas.Apresentacao/Resources/screenshot1.png)
+### Formulário para adicionar ou atualizar marca
+![img3](https://github.com/PauloAlves8039/Projeto-Produtos-Marcas/blob/master/ProdutosMarcas.Apresentacao/Resources/screenshot2.png)
+### Formulário para adicionar ou atualizar produto
+![img4](https://github.com/PauloAlves8039/Projeto-Produtos-Marcas/blob/master/ProdutosMarcas.Apresentacao/Resources/screenshot3.png)
+
+## Author
+:computer: [Paulo Alves](https://github.com/PauloAlves8039)
