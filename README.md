@@ -1,10 +1,9 @@
 <h1 align="center">:book: Projeto Produtos Marcas</h1>
 
 ## :computer: Projeto
-Repositório de uma aplicação desenvolvida para desktop Windows, com o objetivo de utilizar um CRUD para catalogar listas de produtos e marcas.  
+Repositório de uma aplicação desenvolvida para fins didáticos na plataforma desktop Windows, com o objetivo de utilizar um CRUD para catalogar listas de produtos e marcas.  
 
-Projeto teve sua estrutura criada com base no curso [C# (C Sharp) Avançado (https://www.treinaweb.com.br/curso/csharp-avancado), pertencente a formação [Desenvolvedor C# Sênior](https://www.treinaweb.com.br/formacao/desenvolvedor-c-senior).
-
+Projeto teve sua estrutura criada com base no curso [C# Avançado](https://www.treinaweb.com.br/curso/csharp-avancado).
 ## :wrench: Recursos Utilizados
 - IDE Visual Studio Enterprise 2017 v15.9.17
 - Linguagem C#
@@ -29,4 +28,4 @@ Baixar repositório ```git clone https://github.com/PauloAlves8039/Projeto-Produ
 ![img4](https://github.com/PauloAlves8039/Projeto-Produtos-Marcas/blob/master/ProdutosMarcas.Apresentacao/Resources/screenshot3.png)
 
 ## Author
-:computer: [Paulo Alves](https://github.com/PauloAlves8039)
+:boy: [Paulo Alves](https://github.com/PauloAlves8039)
